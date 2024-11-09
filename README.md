@@ -1,11 +1,29 @@
-Token Management and Manipulation Functions
-<a href="https://github.com/byt3n33dl3/"><p align="center">
-<img src="/inc/sahrk.png">
+<a href="https://github.com/byt3n33dl3/SharkMapExec/"><p align="center">
+<img width="300" height="300" src="/inc/sahrk.png">
 </p></a>
 
-# `SharkMapExec`
+<div align="center">
+<h2>BlackMarlinExec Attack KIT</h2>
+<p></div>
 
-[![Release](https://github.com/BishopFox/sliver/actions/workflows/autorelease.yml/badge.svg)](https://github.com/BishopFox/sliver/actions/workflows/autorelease.yml) [![Go Report Card](https://goreportcard.com/badge/github.com/BishopFox/sliver)](https://goreportcard.com/report/github.com/BishopFox/sliver) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+<p align="center">
+  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+      <img src="https://img.shields.io/badge/license-GPLv3-red.svg?style=flat-square" alt="License">
+  </a>
+  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+      <img src="https://img.shields.io/badge/LᴵPT Master-red.svg?style=flat-square" alt="LPT-Master">
+  </a>
+  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+      <img src="https://img.shields.io/badge/Python3-blue.svg?style=flat-square" alt="Python">
+  </a>
+  <a href="https://github.com/Marten4n6/EvilOSX/issues">
+    <img src="https://img.shields.io/github/issues/Marten4n6/EvilOSX.svg?style=flat-square" alt="Issues">
+  </a>
+  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/CONTRIBUTING.md">
+      <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square" alt="Contributing">
+  </a>
+</p>
 
 This is a **BlackkMapExec** Attacks Kit.
 
@@ -15,6 +33,7 @@ You are on the **latest Up to Date** repository of the project SharkMapExec
 - If you want to contribute, open a [Pull Request](https://github.com/byt3n33dl3/SharkMapExec/pulls)
 - If you want to discuss, open a [Discussion](https://github.com/byt3n33dl3/SharkMapExec/discussions)
 
+Token Management and Manipulation Functions
 -------------------------------------------
 * ``Get-AzureKeyVaultTokenWithClientCredentials`` requests a token from STS with Azure Vault specified as the resource/intended audience using a client ID and secret.
 * ``Get-AzureKeyVaultTokenWithUsernamePassword`` requests a token from STS with Azure Vault specified as the resource/intended audience using a user-supplied username and password.
