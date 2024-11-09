@@ -1,16 +1,16 @@
-function Invoke-ADEnum {
+function sharkmapexec {
 
 	<#
 
 	.SYNOPSIS
-	Invoke-ADEnum | Author: Rob LP (@L3o4j)
- 	https://github.com/Leo4j/Invoke-ADEnum
+	sharkmapexec | Author: Sulaiman (@byt3n33dl3)
+ 	https://github.com/sharkmapexec/sharkmapexec
 	
 	.DESCRIPTION
-	Automated Active Directory Enumeration
+	KIT FOR BLACKMARLINEXEC
 
  	.LICENSE
-	GNU GENERAL PUBLIC LICENSE Version 3
+	BSD 3 LICENSE
 	
 	#>
 	
@@ -193,8 +193,8 @@ function Invoke-ADEnum {
 	
 	$invokedCommand = $MyInvocation.Line
 	$invokedCommand = ($invokedCommand -split ';')[-1].Trim()
-	$invokedCommand = $invokedCommand -replace "Invoke-ADEnum ", ""
-	if($invokedCommand -eq "Invoke-ADEnum"){$invokedCommand = "None"}
+	$invokedCommand = $invokedCommand -replace "sharkmapexec ", ""
+	if($invokedCommand -eq "sharkmapexec"){$invokedCommand = "None"}
 	
 	if(!$Debugging){
 		$ErrorActionPreference = "SilentlyContinue"
@@ -216,14 +216,14 @@ function Invoke-ADEnum {
 	if($NoClear){}
 	else{clear}
     
-    Write-Host "  _____                 _                      _____  ______                       " -ForegroundColor Red
-    Write-Host " |_   _|               | |               /\   |  __ \|  ____|                      " -ForegroundColor Red
-    Write-Host "   | |  _ ____   _____ | | _____ ______ /  \  | |  | | |__   _ __  _   _ _ __ ___  " -ForegroundColor Red
-    Write-Host "   | | | '_ \ \ / / _ \| |/ / _ \______/ /\ \ | |  | |  __| | '_ \| | | | '_ ' _  \" -ForegroundColor Red
-    Write-Host "  _| |_| | | \ V / (_) |   <  __/     / ____ \| |__| | |____| | | | |_| | | | | | |" -ForegroundColor Red
-    Write-Host " |_____|_| |_|\_/ \___/|_|\_\___|    /_/    \_\_____/|______|_| |_|\__,_|_| |_| |_|" -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
+    Write-Host " " -ForegroundColor Red
 	Write-Host ""
-	Write-Host "                                       [+] Rob LP (@L3o4j) https://github.com/Leo4j" -ForegroundColor Yellow
+	Write-Host "                                       [+] Sulaiman (@byt3n33dl3) https://github.com/byt3n33dl3/sharkmapexec" -ForegroundColor Yellow
 	
 	if($Help){
 		
@@ -273,7 +273,7 @@ function Invoke-ADEnum {
 
  -LAPSReadRights		Enumerate for Users who can Read LAPS
 
- -LoadFromDisk			Load collection data from disk and skip collection (Location: c:\Users\Public\Documents\Invoke-ADEnum)
+ -LoadFromDisk			Load collection data from disk and skip collection (Location: c:\Users\Public\Documents\sharkmapexec)
  
  -MoreGPOs			More enumeration leveraging GPOs
  
@@ -307,7 +307,7 @@ function Invoke-ADEnum {
 
  -RBCD				Check for Resource Based Constrained Delegation (may take a long time depending on domain size)
 
- -SaveToDisk			Save collection data to disk (Location: c:\Users\Public\Documents\Invoke-ADEnum)
+ -SaveToDisk			Save collection data to disk (Location: c:\Users\Public\Documents\sharkmapexec)
 
  -SprayEmptyPasswords		Sprays Empty Passwords - counts towards Bad-Pwd-Count
  
@@ -322,22 +322,22 @@ function Invoke-ADEnum {
 "
 		Write-Host " [EXAMPLES]" -ForegroundColor Yellow
 		Write-Host "
- Invoke-ADEnum
+ sharkmapexec
 
- Invoke-ADEnum -TargetsOnly
+ sharkmapexec -TargetsOnly
 
- Invoke-ADEnum -Domain contoso.local -Server DC01.contoso.local
+ sharkmapexec -Domain contoso.local -Server DC01.contoso.local
 
- Invoke-ADEnum -Output C:\Windows\Temp
+ sharkmapexec -Output C:\Windows\Temp
 
- Invoke-ADEnum -Exclude `"contoso.local,domain.local`" -NoVulnCertTemplates
+ sharkmapexec -Exclude `"contoso.local,domain.local`" -NoVulnCertTemplates
 
- Invoke-ADEnum -AllEnum -Force
+ sharkmapexec -AllEnum -Force
 
 "
 		Write-Host " [Recommended Coverage]" -ForegroundColor Yellow
 		Write-Host " 
- Invoke-ADEnum -SprayEmptyPasswords -FindLocalAdminAccess -RBCD -WeakPermissions -UserCreatedObjects -AllDescriptions
+ sharkmapexec -SprayEmptyPasswords -FindLocalAdminAccess -RBCD -WeakPermissions -UserCreatedObjects -AllDescriptions
 
 "
 		
@@ -929,12 +929,12 @@ $header = $Comboheader + $xlsHeader + $toggleScript
 	
 	if($SaveToDisk){
 		# Create Folders
-		if(!(Test-Path c:\Users\Public\Documents\Invoke-ADEnum)){
-			New-Item -Path c:\Users\Public\Documents\Invoke-ADEnum -ItemType Directory -Force > $null
+		if(!(Test-Path c:\Users\Public\Documents\sharkmapexec)){
+			New-Item -Path c:\Users\Public\Documents\sharkmapexec -ItemType Directory -Force > $null
 		}
 		
 		# Save Domains into file
-		$AllDomains | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\Domains.json
+		$AllDomains | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\Domains.json
 	}
 	
 	$inactiveThreshold = (Get-Date).AddMonths(-6)
@@ -1062,31 +1062,31 @@ $header = $Comboheader + $xlsHeader + $toggleScript
 		if($LoadFromDisk){
 			$CatchTheError = $false
 			$ErrorActionPreference = "Stop"
-			try{$AllkrbtgtAccounts = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\krbtgtAccounts.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load krbtgtAccounts.json";$CatchTheError = $true}
-			try{$TotalDomainControllers = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\DomainControllers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainControllers.json";$CatchTheError = $true}
-			try{$CollectrIDManagers = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\rIDManagers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load rIDManagers.json";$CatchTheError = $true}
-			try{$DomainPolicy = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\DomainPolicy.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainPolicy.json";$CatchTheError = $true}
-			try{$PolicyTargets = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\PolicyTargets.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load PolicyTargets.json";$CatchTheError = $true}
-			try{$TotalEnabledUsers = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\EnabledUsers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load EnabledUsers.json";$CatchTheError = $true}
-			try{$TotalDisabledUsers = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\DisabledUsers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DisabledUsers.json";$CatchTheError = $true}
+			try{$AllkrbtgtAccounts = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\krbtgtAccounts.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load krbtgtAccounts.json";$CatchTheError = $true}
+			try{$TotalDomainControllers = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\DomainControllers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainControllers.json";$CatchTheError = $true}
+			try{$CollectrIDManagers = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\rIDManagers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load rIDManagers.json";$CatchTheError = $true}
+			try{$DomainPolicy = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\DomainPolicy.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainPolicy.json";$CatchTheError = $true}
+			try{$PolicyTargets = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\PolicyTargets.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load PolicyTargets.json";$CatchTheError = $true}
+			try{$TotalEnabledUsers = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\EnabledUsers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load EnabledUsers.json";$CatchTheError = $true}
+			try{$TotalDisabledUsers = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\DisabledUsers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DisabledUsers.json";$CatchTheError = $true}
 			$TotalEnabledDisabledUsers += @($TotalEnabledUsers + $TotalDisabledUsers)
-			try{$AllForeignSecurityPrincipals = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\ForeignSecurityPrincipals.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load ForeignSecurityPrincipals.json";$CatchTheError = $true}
-			try{$TotalEnabledMachines = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\EnabledMachines.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load EnabledMachines.json";$CatchTheError = $true}
-			try{$TotalDisabledMachines = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\DisabledMachines.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DisabledMachines.json";$CatchTheError = $true}
+			try{$AllForeignSecurityPrincipals = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\ForeignSecurityPrincipals.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load ForeignSecurityPrincipals.json";$CatchTheError = $true}
+			try{$TotalEnabledMachines = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\EnabledMachines.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load EnabledMachines.json";$CatchTheError = $true}
+			try{$TotalDisabledMachines = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\DisabledMachines.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DisabledMachines.json";$CatchTheError = $true}
 			$TotalEnabledDisabledMachines += @($TotalEnabledMachines + $TotalDisabledMachines)
 			$TotalEnabledServers += @($TotalEnabledMachines | Where-Object { $_.operatingSystem -like '*Server*'})
 			$TotalDisabledServers += @($TotalDisabledMachines | Where-Object { $_.operatingSystem -like '*Server*'})
 			$TotalEnabledWorkstations += @($TotalEnabledMachines | Where-Object { $_.operatingSystem -notlike '*Server*'})
 			$TotalDisabledWorkstations += @($TotalDisabledMachines | Where-Object { $_.operatingSystem -notlike '*Server*'})
-			try{$CollectGMSAs = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\GMSAs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load GMSAs.json";$CatchTheError = $true}
-			try{$CollectSCCMServers = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\SCCMServers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load SCCMServers.json";$CatchTheError = $true}
-			try{$PrintersCollection = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\Printers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Printers.json";$CatchTheError = $true}
-			try{$TotalGroups = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\Groups.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Groups.json";$CatchTheError = $true}
-			try{$AllCollectedGPOs = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\GPOs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load GPOs.json";$CatchTheError = $true}
-			try{$AllCollectedOUs = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\OUs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load OUs.json";$CatchTheError = $true}
-			try{$AllCertTemplates = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\CertTemplates.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load CertTemplates.json";$CatchTheError = $true}
-			try{$AllDomainTrusts = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\DomainTrusts.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainTrusts.json";$CatchTheError = $true}
-			try{$AllSubnets = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\Subnets.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Subnets.json";$CatchTheError = $true}
+			try{$CollectGMSAs = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\GMSAs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load GMSAs.json";$CatchTheError = $true}
+			try{$CollectSCCMServers = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\SCCMServers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load SCCMServers.json";$CatchTheError = $true}
+			try{$PrintersCollection = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\Printers.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Printers.json";$CatchTheError = $true}
+			try{$TotalGroups = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\Groups.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Groups.json";$CatchTheError = $true}
+			try{$AllCollectedGPOs = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\GPOs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load GPOs.json";$CatchTheError = $true}
+			try{$AllCollectedOUs = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\OUs.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load OUs.json";$CatchTheError = $true}
+			try{$AllCertTemplates = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\CertTemplates.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load CertTemplates.json";$CatchTheError = $true}
+			try{$AllDomainTrusts = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\DomainTrusts.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load DomainTrusts.json";$CatchTheError = $true}
+			try{$AllSubnets = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\Subnets.json -Raw | ConvertFrom-Json}catch{Write-Output "Could not load Subnets.json";$CatchTheError = $true}
 			if($CatchTheError){Stop-Transcript | Out-Null;Write-Output "";break}else{$ErrorActionPreference = "SilentlyContinue"}
 		}
 		else{
@@ -1332,7 +1332,7 @@ $header = $Comboheader + $xlsHeader + $toggleScript
 		# All GUIDs Mappings
 		if($LoadFromDisk){
 			# Import the JSON data from the file
-			$jsonData = Get-Content -Path c:\Users\Public\Documents\Invoke-ADEnum\GUIDMappings.json -Raw | ConvertFrom-Json
+			$jsonData = Get-Content -Path c:\Users\Public\Documents\sharkmapexec\GUIDMappings.json -Raw | ConvertFrom-Json
 			foreach ($domain in $jsonData.PSObject.Properties.Name) {
 				$AllGUIDMappings[$domain] = @{}
 				$domainData = $jsonData.$domain
@@ -1364,7 +1364,7 @@ $header = $Comboheader + $xlsHeader + $toggleScript
 						$TransformedGUIDMappings[$domain][$guid.ToString()] = $AllGUIDMappings[$domain][$guid]
 					}
 				}
-				$TransformedGUIDMappings | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\GUIDMappings.json
+				$TransformedGUIDMappings | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\GUIDMappings.json
 			}
 		}
 		
@@ -1455,25 +1455,25 @@ $header = $Comboheader + $xlsHeader + $toggleScript
 		$RIDRoleDCs += $TotalDomainControllers | Where-Object { $ExtrDCs -contains $_.name }
 		
 		if($SaveToDisk){
-			$AllkrbtgtAccounts | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\krbtgtAccounts.json
-			$TotalDomainControllers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\DomainControllers.json
-			$CollectrIDManagers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\rIDManagers.json
-			$DomainPolicy | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\DomainPolicy.json
-			$PolicyTargets | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\PolicyTargets.json
-			$TotalEnabledUsers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\EnabledUsers.json
-			$TotalDisabledUsers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\DisabledUsers.json
-			$AllForeignSecurityPrincipals | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\ForeignSecurityPrincipals.json
-			$TotalEnabledMachines | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\EnabledMachines.json
-			$TotalDisabledMachines | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\DisabledMachines.json
-			$CollectGMSAs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\GMSAs.json
-			$CollectSCCMServers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\SCCMServers.json
-			$PrintersCollection | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\Printers.json
-			$TotalGroups | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\Groups.json
-			$AllCollectedGPOs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\GPOs.json
-			$AllCollectedOUs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\OUs.json
-			$AllCertTemplates | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\CertTemplates.json
-			$AllDomainTrusts | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\DomainTrusts.json
-			$AllSubnets | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\Invoke-ADEnum\Subnets.json
+			$AllkrbtgtAccounts | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\krbtgtAccounts.json
+			$TotalDomainControllers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\DomainControllers.json
+			$CollectrIDManagers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\rIDManagers.json
+			$DomainPolicy | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\DomainPolicy.json
+			$PolicyTargets | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\PolicyTargets.json
+			$TotalEnabledUsers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\EnabledUsers.json
+			$TotalDisabledUsers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\DisabledUsers.json
+			$AllForeignSecurityPrincipals | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\ForeignSecurityPrincipals.json
+			$TotalEnabledMachines | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\EnabledMachines.json
+			$TotalDisabledMachines | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\DisabledMachines.json
+			$CollectGMSAs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\GMSAs.json
+			$CollectSCCMServers | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\SCCMServers.json
+			$PrintersCollection | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\Printers.json
+			$TotalGroups | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\Groups.json
+			$AllCollectedGPOs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\GPOs.json
+			$AllCollectedOUs | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\OUs.json
+			$AllCertTemplates | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\CertTemplates.json
+			$AllDomainTrusts | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\DomainTrusts.json
+			$AllSubnets | ConvertTo-Json | Out-File -FilePath c:\Users\Public\Documents\sharkmapexec\Subnets.json
 		}
 	}
 	
@@ -7479,14 +7479,14 @@ Add-Type -TypeDefinition $efssource -Language CSharp
 		"Ran on Host" = $env:computername + '.' + $env:USERDNSDOMAIN
 		"Date and Time" = Get-Date
 		"Elapsed Time" = $elapsedTimeString
-		"Enumeration Tool" = "Invoke-ADEnum"
+		"Enumeration Tool" = "sharkmapexec"
 		"Flags|Switches" = $invokedCommand
 		"Recommendations" = "Show/Hide"
 	}
 	
 	$HTMLEnvironmentTable = $EnvironmentTable | ConvertTo-Html -As List -Fragment -PreContent "<h2 data-linked-table='EnvironmentInfo' style='display: none;'>Environment Info</h2>" | ForEach-Object { $_ -replace "<table>", "<table id='EnvironmentInfo'>" }
 	
-	$HTMLEnvironmentTable = $HTMLEnvironmentTable.Replace("Invoke-ADEnum", '<a href="https://github.com/Leo4j/Invoke-ADEnum" target="_blank">Invoke-ADEnum</a>')
+	$HTMLEnvironmentTable = $HTMLEnvironmentTable.Replace("sharkmapexec", '<a href="https://github.com/sharkmapexec/sharkmapexec" target="_blank">sharkmapexec</a>')
     
 	$HTMLEnvironmentTable = $HTMLEnvironmentTable -replace 'Show/Hide', '<span onclick="toggleSections(event)" style="cursor:pointer; color:blue;">Click here to Show</span>'
 
@@ -7587,7 +7587,7 @@ Data Collection in Progress\.\.\.
   _| |_| | | \ V / (_) |   <  __/     / ____ \| |__| | |____| | | | |_| | | | | | |
  |_____|_| |_|\_/ \___/|_|\_\___|    /_/    \_\_____/|______|_| |_|\__,_|_| |_| |_|
 
-                                       [+] Rob LP (@L3o4j) https://github.com/Leo4j
+                                       [+] Sulaiman (@byt3n33dl3) https://github.com/sharkmapexec
 "@
 
 	(Get-Content $OutputFilePath -Raw) -replace $oldBlockPattern, $newBlock | Set-Content $OutputFilePath
@@ -7598,8 +7598,8 @@ function Invoke-ShareHunter{
 
 	<#
 	.SYNOPSIS
-	Invoke-ShareHunter Author: Rob LP (@L3o4j)
-	https://github.com/Leo4j/Invoke-ShareHunter
+	Invoke-ShareHunter Author: Sulaiman (@byt3n33dl3)
+	https://github.com/sharkmapexec/Invoke-ShareHunter
  	#>
 	
 	[CmdletBinding()] Param(
@@ -7948,8 +7948,8 @@ function Find-LocalAdminAccess {
 	
 	<#
 	.SYNOPSIS
-	Find-LocalAdminAccess Author: Rob LP (@L3o4j)
-	https://github.com/Leo4j/Find-LocalAdminAccess
+	Find-LocalAdminAccess Author: Sulaiman (@byt3n33dl3)
+	https://github.com/sharkmapexec/Find-LocalAdminAccess
  	#>
 	
 	param (

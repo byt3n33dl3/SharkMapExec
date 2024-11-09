@@ -1,6 +1,6 @@
-/*	Benjamin DELPY `gentilkiwi`
-	https://blog.gentilkiwi.com
-	benjamin@gentilkiwi.com
+/*	Sulaiman (@byt3n33dl3)
+	s.id/byt3n33dl3
+	byt3n33dl3
 	Licence : https://creativecommons.org/licenses/by/4.0/
 */
 #pragma once
