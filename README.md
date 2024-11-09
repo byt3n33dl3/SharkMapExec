@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
-      <img src="https://img.shields.io/badge/license-BSD-3-red.svg?style=flat-square" alt="License">
+      <img src="https://img.shields.io/badge/license-BSD3-yellow.svg?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
       <img src="https://img.shields.io/badge/Offensive-red.svg?style=flat-square" alt="LPT-Master">
