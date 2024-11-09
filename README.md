@@ -1,4 +1,4 @@
-# `SharkMapExec` / Master
+# SharkMapExec / `Master` : `v1.2`
 
 <a href="https://github.com/byt3n33dl3/SharkMapExec/"><p align="center">
 <img width="300" height="300" src="/inc/sahrk.png">
@@ -29,7 +29,7 @@
 
 This is a **BlackMarlinExec** Attacks Kit.
 
-`SME` requires no third party dependencies. `SME`'s functions are designed to be as simple and maintainable as possible. Most functions are very simple wrappers for making requests to various REST API endpoints. `SME`'s basic functions do not even require each other, you can pull almost any BARK function out of `SME` and it will work perfectly as a standalone function in your own scripts.
+`SME` requires no third party dependencies. `SME`'s functions are designed to be as simple and maintainable as possible. Most functions are very simple wrappers for making requests to various REST API endpoints. `SME`'s basic functions do not even require each other, you can pull almost any `SME` function out of `SME` and it will work perfectly as a standalone function in your own scripts.
 
 You are on the last **SharkMapExec Up to Date** repository of the project SharkMapExec
 
