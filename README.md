@@ -29,6 +29,8 @@
 
 This is a **BlackMarlinExec** Attacks Kit.
 
+`SME` requires no third party dependencies. `SME`'s functions are designed to be as simple and maintainable as possible. Most functions are very simple wrappers for making requests to various REST API endpoints. `SME`'s basic functions do not even require each other, you can pull almost any BARK function out of `SME` and it will work perfectly as a standalone function in your own scripts.
+
 You are on the last **SharkMapExec Up to Date** repository of the project SharkMapExec
 
 - If you want to report a problem, open un [Issue](https://github.com/byt3n33dl3/SharkMapExec/issues) 
