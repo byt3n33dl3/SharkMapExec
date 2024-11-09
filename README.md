@@ -3,19 +3,19 @@
 </p></a>
 
 <div align="center">
-<h2>BlackMarlinExec Attack KIT</h2>
+<h2>BlackMarlinExec Attack Kit</h2>
 <p></div>
 
 
 <p align="center">
   <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
-      <img src="https://img.shields.io/badge/license-GPLv3-red.svg?style=flat-square" alt="License">
+      <img src="https://img.shields.io/badge/license-BSD-3-red.svg?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
-      <img src="https://img.shields.io/badge/LᴵPT Master-red.svg?style=flat-square" alt="LPT-Master">
+      <img src="https://img.shields.io/badge/Offensive-red.svg?style=flat-square" alt="LPT-Master">
   </a>
   <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
-      <img src="https://img.shields.io/badge/Python3-blue.svg?style=flat-square" alt="Python">
+      <img src="https://img.shields.io/badge/Powershell-blue.svg?style=flat-square" alt="Python">
   </a>
   <a href="https://github.com/Marten4n6/EvilOSX/issues">
     <img src="https://img.shields.io/github/issues/Marten4n6/EvilOSX.svg?style=flat-square" alt="Issues">
@@ -49,7 +49,7 @@ Token Management and Manipulation Functions
 * ``Get-MSGraphTokenWithUsernamePassword`` requests an MS Graph-scoped JWT with a user-supplied username and password.
 * ``Parse-JWTToken`` will take a Base64 encoded JWT as input and parse it for you. Useful for verifying correct token audience and claims.
 
-The refresh token-based functions in BARK are based on functions in [TokenTactics](https://github.com/rvrsh3ll/TokenTactics) by Steve [Borosh](https://twitter.com/424f424f).
+The refresh token-based functions in SharkMapExec are based on functions in [TokenTactics](https://github.com/rvrsh3ll/TokenTactics) by Steve [Borosh](https://twitter.com/424f424f).
 
 Entra Enumeration Functions
 ---------------------------
