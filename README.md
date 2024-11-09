@@ -1,3 +1,5 @@
+# `SharkMapExec` / Master
+
 <a href="https://github.com/byt3n33dl3/SharkMapExec/"><p align="center">
 <img width="300" height="300" src="/inc/sahrk.png">
 </p></a>
@@ -25,9 +27,9 @@
   </a>
 </p>
 
-This is a **BlackkMapExec** Attacks Kit.
+This is a **BlackMarlinExec** Attacks Kit.
 
-You are on the **laSharkMapExec Up to Date** repository of the project SharkMapExec
+You are on the last **SharkMapExec Up to Date** repository of the project SharkMapExec
 
 - If you want to report a problem, open un [Issue](https://github.com/byt3n33dl3/SharkMapExec/issues) 
 - If you want to contribute, open a [Pull Request](https://github.com/byt3n33dl3/SharkMapExec/pulls)
