@@ -1,28 +1,28 @@
-# SharkMapExec / `Master` : `v1.2`
+# SharkMapExec / `Master` : `v1.3`
 
 <a href="https://github.com/byt3n33dl3/SharkMapExec/"><p align="center">
 <img width="300" height="300" src="/inc/sahrk.png">
 </p></a>
 
 <div align="center">
-<h2>BlackMarlinExec Attack Kit</h2>
+<h2>BlackMarlinExec Attack Research Kit</h2>
 <p></div>
 
 
 <p align="center">
-  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+  <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/LICENSE.txt">
       <img src="https://img.shields.io/badge/license-BSD3-yellow.svg?style=flat-square" alt="License">
   </a>
-  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+  <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/LICENSE.txt">
       <img src="https://img.shields.io/badge/Offensive-red.svg?style=flat-square" alt="LPT-Master">
   </a>
-  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/LICENSE.txt">
+  <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/LICENSE.txt">
       <img src="https://img.shields.io/badge/Powershell-blue.svg?style=flat-square" alt="Python">
   </a>
-  <a href="https://github.com/Marten4n6/EvilOSX/issues">
-    <img src="https://img.shields.io/github/issues/Marten4n6/EvilOSX.svg?style=flat-square" alt="Issues">
+  <a href="https://github.com/byt3n33dl3/CrackMapExec/issues">
+    <img src="https://img.shields.io/github/issues/byt3n33dl3/CrackMapExec.svg?style=flat-square" alt="Issues">
   </a>
-  <a href="https://github.com/Marten4n6/EvilOSX/blob/master/CONTRIBUTING.md">
+  <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/CONTRIBUTING.md">
       <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square" alt="Contributing">
   </a>
 </p>
@@ -37,7 +37,7 @@ You are on the last **Up to Date** repository of the project SharkMapExec
 - If you want to contribute, open a [Pull Request](https://github.com/byt3n33dl3/SharkMapExec/pulls)
 - If you want to discuss, open a [Discussion](https://github.com/byt3n33dl3/SharkMapExec/discussions)
 
-Token Management and Manipulation Functions
+Token Management
 -------------------------------------------
 * ``SharkMapExec-AzureKeyVaultTokenWithClientCredentials`` requests a token from STS with Azure Vault specified as the resource/intended audience using a client ID and secret.
 * ``SharkMapExec-AzureKeyVaultTokenWithUsernamePassword`` requests a token from STS with Azure Vault specified as the resource/intended audience using a user-supplied username and password.
@@ -55,7 +55,7 @@ Token Management and Manipulation Functions
 
 The refresh token-based functions in SharkMapExec are based on functions in [TokenTactics](https://github.com/rvrsh3ll/TokenTactics) by Steve [Borosh](https://twitter.com/424f424f).
 
-Entra Enumeration Functions
+Entra Enumeration
 ---------------------------
 * ``SharkMapExec-AllEntraApps`` collects all Entra application registration objects.
 * ``SharkMapExec-AllEntraGroups`` collects all Entra groups.
@@ -72,7 +72,7 @@ Entra Enumeration Functions
 * ``SharkMapExec-EntraTierZeroServicePrincipals`` collects Entra service principals that have a Tier Zero Entra Admin Role or Tier Zero MS Graph App Role assignment.
 * ``SharkMapExec-MGAppRoles`` collects the app roles made available by the MS Graph service principal.
 
-Azure Resource Manager Enumeration Functions
+Azure Enumeration
 --------------------------------------------
 * ``SharkMapExec-AllAzureManagedIdentityAssignments`` collects all managed identity assignments. 
 * ``SharkMapExec-AllAzureRMAKSClusters`` collects all kubernetes service clusters under a subscription.
@@ -99,12 +99,12 @@ Azure Resource Manager Enumeration Functions
 * ``SharkMapExec-AzureRMRoleDefinitions`` collects all role definitions described at a subscription scope, including custom roles.
 * ``SharkMapExec-AzureRMWebApp`` collects a web app.
 
-Intune Enumeration Functions
+Intune Enumeration
 ----------------------------
 * ``SharkMapExec-IntuneManagedDevices`` collects Intune-managed devices.
 * ``SharkMapExec-IntuneRoleDefinitions`` collects available Intune role definitions.
 
-Entra Abuse Functions
+Entra Abuse
 ---------------------
 * ``SharkMapExec-MemberToEntraGroup`` will attempt to add a principal to an Entra group.
 * ``SharkMapExec-EntraRole`` will attempt to enables (or "activate") the Entra role.
@@ -118,7 +118,7 @@ Entra Abuse Functions
 * ``Reset-EntraUserPassword`` will attempt to reset the password of another user. If successful, the output will contain the SharkMapExec, Azure-generated password of the user.
 * ``Set-EntraUserPassword`` will attempt to set the password of another user to a SharkMapExec user-provided value.
 
-Azure Resource Manager Abuse Functions
+Azure Abuse
 --------------------------------------
 * ``SharkMapExec-AzureRMAKSRunCommand`` will instruct the AKS cluster to execute a command.
 * ``SharkMapExec-AzureRMVMRunCommand`` will attempt to execute a command on a VM.
