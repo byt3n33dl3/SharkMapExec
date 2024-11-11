@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/LICENSE.txt">
-      <img src="https://img.shields.io/badge/license-BSD3-yellow.svg?style=flat-square" alt="License">
+      <img src="https://img.shields.io/badge/license-BSD3-green.svg?style=flat-square" alt="License">
   </a>
   <a href="https://github.com/byt3n33dl3/CrackMapExec/blob/master/LICENSE.txt">
       <img src="https://img.shields.io/badge/Offensive-red.svg?style=flat-square" alt="LPT-Master">
@@ -27,7 +27,7 @@
   </a>
 </p>
 
-This is a **BlackMarlinExec** Attacks Kit.
+This is a **BlackMarlinExec** Attack Research Kit.
 
 `SME` requires no third party dependencies. `SME`'s functions are designed to be as simple and maintainable as possible. Most functions are very simple wrappers for making requests to various REST API endpoints. `SME`'s basic functions do not even require each other, you can pull almost any `SME` function out of `SME` and it will work perfectly as a standalone function in your own scripts.
 
@@ -158,3 +158,20 @@ Meta Functions
 * ``SharkMapExec-MGAddSelfAsOwnerOfSP`` is used in abuse validation SharkMapExecing to determine whether a service principal with a particular privilege can grant itself ownership of an existing Entra service principal.
 * ``SharkMapExec-MGAddSelfToEntraRole`` is used in abuse validation SharkMapExecing to determine whether a service principal with a particular privilege can add itself to an Entra admin role - Global Admin, for example.
 * ``SharkMapExec-MGAddSelfToMGAppRole``is used in abuse validation SharkMapExecing to determine whether a service principal with a particular privilege can grant itself a particular MS Graph app role without admin consent.
+
+# Contributors
+
+<p align="left">
+<a href="https://github.com/byt3n33dl3"><img src="https://avatars.githubusercontent.com/u/151133481?v=4" width="50" height="50" alt="" style="max-width: 100%;"></a>
+<a href="https://github.com/byt3exec"><img src="https://avatars.githubusercontent.com/u/160317126?v=4" width="50" height="50" alt="" style="max-width: 100%;"></a>
+</p>
+
+# Thanks to / `Master`
+>- byt3n33dl3
+
+- All the amazing community contributors for sending [PRs](https://github.com/byt3n33dl3/thc-Nuclei/graphs/contributors) and keeping this project updated.
+
+- GangstaCrew
+
+# License [BSD3](https://github.com/byt3n33dl3/SharkMapExec/blob/main/LICENSE.md) / `Master`
+
